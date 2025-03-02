@@ -21,8 +21,8 @@ export default function LabelSelector({
 }: LabelSelectorProps) {
   const [inputValue, setInputValue] = useState<string>(currentLabel.toString());
   
-  const MIN_LABEL = 1;
-  const MAX_LABEL = 50; // Assuming 50 Kannada alphabets/characters
+  const MIN_LABEL = 0;
+  const MAX_LABEL = 49; // Assuming 50 Kannada alphabets/characters
   
   const handlePrevious = () => {
     if (currentLabel > MIN_LABEL) {

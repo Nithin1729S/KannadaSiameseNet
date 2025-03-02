@@ -6,8 +6,17 @@ import { Card } from "@/components/ui/card";
 import DrawingCanvas from "@/components/DrawingCanvas";
 import LabelSelector from "@/components/LabelSelector";
 
+const kannadaAlphabets:string[] = [
+  'ಅ', 'ಆ', 'ಇ', 'ಈ', 'ಉ', 'ಊ', 'ಋ', 'ೠ','ಎ', 'ಏ', 'ಐ',
+  'ಒ', 'ಓ', 'ಔ','ಅಂ','ಅಃ', 'ಕ', 'ಖ', 'ಗ', 'ಘ', 'ಙ', 'ಚ', 'ಛ',
+  'ಜ', 'ಝ', 'ಞ', 'ಟ', 'ಠ', 'ಡ', 'ಢ', 'ಣ', 'ತ', 'ಥ',
+  'ದ', 'ಧ', 'ನ', 'ಪ', 'ಫ', 'ಬ', 'ಭ', 'ಮ', 'ಯ', 'ರ',
+  'ಲ', 'ವ', 'ಶ', 'ಷ', 'ಸ', 'ಹ', 'ಳ'
+];
+
+
 export default function Home() {
-  const [currentLabel, setCurrentLabel] = useState<number>(1);
+  const [currentLabel, setCurrentLabel] = useState<number>(0);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const handleSubmit = async (imageData: string) => {
@@ -47,7 +56,7 @@ export default function Home() {
         {/* Left side - Label display */}
         <Card className="flex-1 p-6 flex flex-col items-center justify-center">
           <h2 className="text-xl font-semibold mb-4">Current Label</h2>
-          <div className="text-9xl font-bold mb-8">{currentLabel}</div>
+          <div className="text-9xl font-bold mb-8">{kannadaAlphabets[currentLabel]}</div>
           <LabelSelector 
             currentLabel={currentLabel} 
             setCurrentLabel={setCurrentLabel} 
