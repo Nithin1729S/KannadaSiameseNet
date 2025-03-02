@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { Pencil, Eraser } from "lucide-react";
+import { Pencil } from "lucide-react";
 
 interface DrawingCanvasProps {
   onSubmit: (imageData: string) => void;
@@ -143,9 +143,6 @@ export default function DrawingCanvas({ onSubmit, isSubmitting }: DrawingCanvasP
         <ToggleGroup type="single" value={tool} onValueChange={(value) => value && setTool(value as "pencil" | "eraser")}>
           <ToggleGroupItem value="pencil" aria-label="Write">
             <Pencil className="h-4 w-4" />
-          </ToggleGroupItem>
-          <ToggleGroupItem value="eraser" aria-label="Erase">
-            <Eraser className="h-4 w-4" />
           </ToggleGroupItem>
         </ToggleGroup>
         

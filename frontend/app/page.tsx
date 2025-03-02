@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import DrawingCanvas from "@/components/DrawingCanvas";
@@ -18,7 +18,9 @@ const kannadaAlphabets:string[] = [
 export default function Home() {
   const [currentLabel, setCurrentLabel] = useState<number>(0);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const clearCanvasRef = useRef<(() => void) | null>(null);
 
+  
   const handleSubmit = async (imageData: string) => {
     setIsSubmitting(true);
     try {
@@ -50,9 +52,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-4 md:p-8">
-      <h1 className="text-3xl font-bold mb-8">Kannada Alphabet Drawing</h1>
+      <h1 className="text-3xl font-bold mb-8 mt-10">Kannada Alphabet Recognition</h1>
       
-      <div className="flex flex-col md:flex-row w-full max-w-6xl gap-6">
+      <div className="flex flex-col md:flex-row w-full max-w-6xl gap-6 mt-20">
         {/* Left side - Label display */}
         <Card className="flex-1 p-6 flex flex-col items-center justify-center">
           <h2 className="text-xl font-semibold mb-4">Current Label</h2>

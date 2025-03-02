@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Kannada Alphabet Drawing App',
+  title: 'Kannada Alphabet Recognition',
   description: 'Draw Kannada alphabets and submit them for recognition',
 };
 
