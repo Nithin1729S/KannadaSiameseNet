@@ -112,6 +112,3 @@ model.compile(loss="binary\_crossentropy",optimizer=optimizer)
 The model was trained for 20000 iterations with batch size of 32.
 
 After every 200 iterations, model validation was done using 20-way one shot learning and the accuracy was calculated over 250 trials. This concept is explained in the next section.
-
-9\. Validating the Model
-========================
